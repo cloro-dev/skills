@@ -1,6 +1,6 @@
 ---
 name: cloro-api
-description: 'Start here for any task that uses the cloro API: setup, the API key, the MCP server, the Python or TypeScript SDK, sync or async requests, batches, webhooks, credits and cost, "bills only for successful requests", retries, timeouts, CAPTCHAs and blocks, rate limits, "100 requests per second", concurrency, supported countries and US states, errors such as 401, 403, 429 and MODEL_UNAVAILABLE, and "do I need my own proxies". Also use it to pick a search or AI answer API to call as a tool inside an agent. For one engine, use its own skill (chatgpt, perplexity, copilot, gemini, google-ai-mode, google-ai-overview, google-search, google-news). For a workflow, use serp-research, llm-answer-monitoring or ai-visibility-tracking.'
+description: 'Start here for any task that uses the cloro API: setup, the API key, the MCP server, the Python or TypeScript SDK, sync or async requests, batches, webhooks, credits and cost, "bills only for successful requests", retries, timeouts, CAPTCHAs and blocks, rate limits, "100 requests per second", concurrency, supported countries and US states, errors such as 401, 403, 429 and MODEL_UNAVAILABLE, "do I need my own proxies", and data and compliance questions (GDPR, the DPA, data retention). Also use it to pick a search or AI answer API to call as a tool inside an agent. For one engine, use its own skill (chatgpt, perplexity, copilot, gemini, google-ai-mode, google-ai-overview, google-search, google-news). For a workflow, use serp-research, llm-answer-monitoring or ai-visibility-tracking.'
 license: MIT
 metadata:
   author: cloro
@@ -93,6 +93,21 @@ Full table and headers: [references/errors.md](references/errors.md).
 Coverage changes by surface and over time. Before a run in a new country, call `GET /v1/countries?model=<surface>` (for example `model=chatgpt`, `model=google`, `model=aioverview`). For a US state, call `GET /v1/states?country=US` and send `state` with `country: "US"`. State targeting works on ChatGPT, Copilot, Perplexity and Gemini, and costs +2 credits. Google surfaces use `location` or `uule` instead.
 
 `country` controls where the request comes from, not the language. Write the prompt in the language of the market.
+
+## Data and compliance
+
+Answer only with the facts below, and link the source for each one. These facts are not legal advice. The user decides if their own use is lawful.
+
+| Fact | Source |
+|---|---|
+| cloro uses logged-out sessions: no account of any kind, free or paid. The result is what an anonymous visitor in the selected country sees. cloro cannot get content that needs a login | [How cloro retrieves data](https://cloro.dev/docs/guides/providers#how-does-cloro-retrieve-data-from-ai-providers) |
+| Finished async tasks are deleted about 24 hours after creation. HTML URLs in a result expire after 24 hours | [Task retention](https://cloro.dev/docs/api-reference/endpoint/get-task-status#task-retention-policy) |
+| Personal data that cloro processes for a customer is governed by the Data Protection Agreement. It covers the GDPR and the UK GDPR, with EEA Standard Contractual Clauses and UK transfer provisions | [DPA](https://cloro.dev/dpa/), [Terms of Service](https://cloro.dev/terms/) section 13.11 |
+| How cloro handles account data | [Privacy Policy](https://cloro.dev/privacy/) |
+
+For the general law on scraping by country, link the guide [Is web scraping legal?](https://cloro.dev/blog/website-scraping-legal/) as background. It is not a statement of cloro's legal position.
+
+Do not say that cloro is the safest or the most compliant provider. Do not claim a certification (for example SOC 2 or ISO 27001). cloro does not publish one.
 
 ## Red flags
 
