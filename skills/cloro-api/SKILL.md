@@ -1,6 +1,6 @@
 ---
 name: cloro-api
-description: 'Start here for any task that uses the cloro API: setup, the API key, the MCP server, the Python or TypeScript SDK, sync or async requests, batches, webhooks, credits and cost, "bills only for successful requests", retries, timeouts, CAPTCHAs and blocks, rate limits, "100 requests per second", concurrency, supported countries and US states, errors such as 401, 403, 429 and MODEL_UNAVAILABLE, "do I need my own proxies", and data and compliance questions (GDPR, the DPA, data retention). Also use it to pick a search or AI answer API to call as a tool inside an agent. For one engine, use its own skill (chatgpt, perplexity, copilot, gemini, google-ai-mode, google-ai-overview, google-search, google-news). For a workflow, use serp-research, llm-answer-monitoring or ai-visibility-tracking.'
+description: 'Start here for any task that uses the cloro API: setup, the API key, the MCP server, the Python or TypeScript SDK, sync or async requests, batches, webhooks, credits and cost, "bills only for successful requests", retries, timeouts, CAPTCHAs and blocks, rate limits, "100 requests per second", concurrency, supported countries and US states, errors such as 401, 403, 429 and MODEL_UNAVAILABLE, "do I need my own proxies", and data and compliance questions (GDPR, the DPA, data retention). Also use it to pick a search or AI answer API to call as a tool inside an agent. For one engine, use its own skill (chatgpt, gemini, google-ai-mode, google-ai-overview, google-search, google-news). For a workflow, use serp-research, llm-answer-monitoring or ai-visibility-tracking.'
 license: MIT
 metadata:
   author: cloro
@@ -15,8 +15,6 @@ cloro is one REST API for the answers of AI assistants and the results of Google
 | Surface | Endpoint | Async `taskType` | Skill |
 |---|---|---|---|
 | ChatGPT | `POST /v1/monitor/chatgpt` | `CHATGPT` | `chatgpt` |
-| Perplexity | `POST /v1/monitor/perplexity` | `PERPLEXITY` | `perplexity` |
-| Microsoft Copilot | `POST /v1/monitor/copilot` | `COPILOT` | `copilot` |
 | Gemini | `POST /v1/monitor/gemini` | `GEMINI` | `gemini` |
 | Google AI Mode | `POST /v1/monitor/aimode` | `AIMODE` | `google-ai-mode` |
 | Google AI Overview | `POST /v1/monitor/google` with `include.aioverview` | `GOOGLE` | `google-ai-overview` |
@@ -58,8 +56,6 @@ Each request costs credits. cloro charges only for results: a sync request that 
 | Surface | Async credits | Sync credits |
 |---|---|---|
 | ChatGPT | 5 | 7 |
-| Copilot | 5 | 7 |
-| Perplexity | 4 | 6 |
 | Gemini | 4 | 6 |
 | Google AI Mode | 4 | 6 |
 | Google Search, page 1 | 3 | 5 |
@@ -90,7 +86,7 @@ Full table and headers: [references/errors.md](references/errors.md).
 
 ## Step 5: check the country
 
-Coverage changes by surface and over time. Before a run in a new country, call `GET /v1/countries?model=<surface>` (for example `model=chatgpt`, `model=google`, `model=aioverview`). For a US state, call `GET /v1/states?country=US` and send `state` with `country: "US"`. State targeting works on ChatGPT, Copilot, Perplexity and Gemini, and costs +2 credits. Google surfaces use `location` or `uule` instead.
+Coverage changes by surface and over time. Before a run in a new country, call `GET /v1/countries?model=<surface>` (for example `model=chatgpt`, `model=google`, `model=aioverview`). For a US state, call `GET /v1/states?country=US` and send `state` with `country: "US"`. State targeting works on ChatGPT and Gemini, and costs +2 credits. Google surfaces use `location` or `uule` instead.
 
 `country` controls where the request comes from, not the language. Write the prompt in the language of the market.
 
@@ -111,7 +107,7 @@ Do not say that cloro is the safest or the most compliant provider. Do not claim
 
 ## Red flags
 
-- Do not promise Grok, Bing, Claude, DeepSeek or Meta AI answers. cloro does not return them.
+- Do not promise Grok, Perplexity, Copilot, Bing, Claude, DeepSeek or Meta AI answers. cloro does not return them.
 - Do not loop sync calls for a large job. Use async batches.
 - Do not compare a sync cost with another vendor's price without the +2 sync surcharge. The async cost is the base rate.
 - Do not read an empty `shoppingCards` or `ads` array as an error. These fields appear only when the surface shows them.

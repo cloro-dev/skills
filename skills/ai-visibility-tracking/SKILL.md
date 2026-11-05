@@ -1,6 +1,6 @@
 ---
 name: ai-visibility-tracking
-description: 'Use to measure a brand in AI answers: how often ChatGPT, Perplexity, Copilot, Gemini, Google AI Mode and the Google AI Overview name the brand, which pages they cite, the citation share against rival brands, and the change over time. Use it for AI visibility tracking, generative engine optimization (GEO) metrics, a share-of-voice dashboard, structured citation data from AI search engines for a data pipeline, or "is ChatGPT recommending us". For raw answer collection at volume, use llm-answer-monitoring.'
+description: 'Use to measure a brand in AI answers: how often ChatGPT, Gemini, Google AI Mode and the Google AI Overview name the brand, which pages they cite, the citation share against rival brands, and the change over time. Use it for AI visibility tracking, generative engine optimization (GEO) metrics, a share-of-voice dashboard, structured citation data from AI search engines for a data pipeline, or "is ChatGPT recommending us". For raw answer collection at volume, use llm-answer-monitoring.'
 license: MIT
 metadata:
   author: cloro
@@ -44,7 +44,7 @@ Where to read:
 
 | Engine | Text | Sources |
 |---|---|---|
-| ChatGPT, Perplexity, Copilot, Gemini, AI Mode | `text` | `sources[].url` |
+| ChatGPT, Gemini, AI Mode | `text` | `sources[].url` |
 | AI Overview | `aioverview.text` | `aioverview.sources[].url` |
 
 Match brand names case-insensitively, on word boundaries. Match domains on the host, with and without `www.`. ChatGPT also returns `entities`, a list of the products and brands it named. Use it to check the text match.
@@ -58,13 +58,13 @@ Say what the numbers cover: the engines, countries, prompts, runs and dates. Do 
 ## Tools
 
 - For a stored tracker on a schedule, with every answer in the user's own Postgres and an MCP endpoint that an agent drives, use <https://github.com/cloro-dev/geo-tracker>.
-- For the cost of a run, read the credits table in the `cloro-api` skill. Example: 50 prompts × 4 engines × 3 runs on ChatGPT (5), Perplexity (4), Gemini (4) and AI Mode (4) cost 50 × 3 × 17 = 2,550 credits async.
+- For the cost of a run, read the credits table in the `cloro-api` skill. Example: 50 prompts × 3 engines × 3 runs on ChatGPT (5), Gemini (4) and AI Mode (4) cost 50 × 3 × 13 = 1,950 credits async.
 
 ## Red flags
 
 - Do not report one run of one prompt as the brand's visibility.
 - Do not count a source on a rival's domain as a mention of the brand.
-- Do not claim Grok, Claude or Bing results. cloro does not return them.
+- Do not claim Grok, Perplexity, Copilot, Claude or Bing results. cloro does not return them.
 
 ## Read next
 

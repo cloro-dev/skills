@@ -30,8 +30,6 @@ Generic MCP config:
 | Tool | Endpoint |
 |---|---|
 | `scrape_chatgpt` | `POST /v1/monitor/chatgpt` |
-| `scrape_perplexity` | `POST /v1/monitor/perplexity` |
-| `scrape_copilot` | `POST /v1/monitor/copilot` |
 | `scrape_gemini` | `POST /v1/monitor/gemini` |
 | `scrape_google_ai_mode` | `POST /v1/monitor/aimode` |
 | `scrape_google` | `POST /v1/monitor/google` (set `include.aioverview` for the AI Overview) |
@@ -56,7 +54,7 @@ res = client.monitor.chatgpt(prompt="best crm for startups", country="US")
 print(res["result"]["text"])
 ```
 
-Methods: `client.monitor.chatgpt`, `.perplexity`, `.copilot`, `.gemini`, `.aimode` (take `prompt`), `.google`, `.google_news` (take `query`). Async: `client.async_tasks.create_batch([...])` (up to 500 tasks), `client.async_tasks.wait(task_id)`, `client.async_tasks.run(task_type=..., payload=...)`. The default timeout is 60 seconds. Raise it to 300.
+Methods: `client.monitor.chatgpt`, `.gemini`, `.aimode` (take `prompt`), `.google`, `.google_news` (take `query`). Async: `client.async_tasks.create_batch([...])` (up to 500 tasks), `client.async_tasks.wait(task_id)`, `client.async_tasks.run(task_type=..., payload=...)`. The default timeout is 60 seconds. Raise it to 300.
 
 ## TypeScript
 
@@ -71,7 +69,7 @@ const client = new Cloro(); // reads CLORO_API_KEY
 const res = await client.monitor.chatgpt({ prompt: "best crm for startups", country: "US" });
 ```
 
-Methods: `client.monitor.chatgpt`, `.perplexity`, `.copilot`, `.gemini`, `.aimode`, `.google`, `.googleNews`. Async: `client.asyncTasks.createBatch`, `.wait`, `.run`.
+Methods: `client.monitor.chatgpt`, `.gemini`, `.aimode`, `.google`, `.googleNews`. Async: `client.asyncTasks.createBatch`, `.wait`, `.run`.
 
 ## No-code
 

@@ -51,7 +51,7 @@ Fields that AI Mode did not show are absent or empty.
 
 ## The queries behind the answer
 
-The AI Mode response has no field for the search queries behind the answer. Google does not put them in the page it serves to logged-out users. If the task needs the query fan-out, use the `chatgpt` skill (`include.searchQueries`), or `perplexity` or `copilot`, which return their queries by default.
+The AI Mode response has no field for the search queries behind the answer. Google does not put them in the page it serves to logged-out users. If the task needs the query fan-out, use the `chatgpt` skill with `include.searchQueries`.
 
 ## Cost
 
