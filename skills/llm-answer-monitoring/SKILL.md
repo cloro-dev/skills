@@ -1,6 +1,6 @@
 ---
 name: llm-answer-monitoring
-description: 'Use to collect AI answers at volume: run a set of prompts across ChatGPT, Perplexity, Copilot, Gemini, Google AI Mode and the Google AI Overview, once or on a schedule, and store every answer with its sources. Use it to build a dataset of ChatGPT answers for research, monitor how AI answers change over time, run a long-running LLM scraping pipeline, sustain high volume without blocks, or replace an in-house headless browser farm. Uses async tasks, batches of up to 500 and webhooks. For brand metrics on top of the answers, use ai-visibility-tracking. For one call, use the engine skill.'
+description: 'Use to collect AI answers at volume: run a set of prompts across ChatGPT, Gemini, Google AI Mode and the Google AI Overview, once or on a schedule, and store every answer with its sources. Use it to build a dataset of ChatGPT answers for research, monitor how AI answers change over time, run a long-running LLM scraping pipeline, sustain high volume without blocks, or replace an in-house headless browser farm. Uses async tasks, batches of up to 500 and webhooks. For brand metrics on top of the answers, use ai-visibility-tracking. For one call, use the engine skill.'
 license: MIT
 metadata:
   author: cloro
@@ -25,13 +25,11 @@ Collect answers for many prompts from many AI engines, and store them. cloro run
 | Engine | `taskType` | Payload key | Async credits |
 |---|---|---|---|
 | ChatGPT | `CHATGPT` | `prompt` | 5 (7 with `include.searchQueries` or `include.shopping`) |
-| Perplexity | `PERPLEXITY` | `prompt` | 4 |
-| Copilot | `COPILOT` | `prompt` | 5 |
 | Gemini | `GEMINI` | `prompt` | 4 |
 | Google AI Mode | `AIMODE` | `prompt` | 4 |
 | Google AI Overview | `GOOGLE` with `include.aioverview` | `query` | 5 |
 
-`state` adds +2 on ChatGPT, Perplexity, Copilot and Gemini. Async tasks pay no sync surcharge.
+`state` adds +2 on ChatGPT and Gemini. Async tasks pay no sync surcharge.
 
 ## Submit a batch
 
@@ -43,7 +41,7 @@ curl -X POST "https://api.cloro.dev/v1/async/task/batch" \
     {"taskType": "CHATGPT", "idempotencyKey": "run-2026-11-03-p1-chatgpt-us",
      "webhook": {"url": "https://example.com/cloro-webhook"},
      "payload": {"prompt": "best crm for startups", "country": "US"}},
-    {"taskType": "PERPLEXITY", "idempotencyKey": "run-2026-11-03-p1-perplexity-us",
+    {"taskType": "GEMINI", "idempotencyKey": "run-2026-11-03-p1-gemini-us",
      "webhook": {"url": "https://example.com/cloro-webhook"},
      "payload": {"prompt": "best crm for startups", "country": "US"}}
   ]'
@@ -58,7 +56,7 @@ from cloro import Cloro
 
 client = Cloro()
 jobs = [{"task_type": e, "payload": {"prompt": p, "country": "US"}}
-        for p in prompts for e in ("CHATGPT", "PERPLEXITY", "GEMINI")]
+        for p in prompts for e in ("CHATGPT", "GEMINI", "AIMODE")]
 for i in range(0, len(jobs), 500):
     for item in client.async_tasks.create_batch(jobs[i:i + 500]):
         if item["success"]:
