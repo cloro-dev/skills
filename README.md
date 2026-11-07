@@ -1,6 +1,6 @@
 # cloro skills
 
-Agent skills for the [cloro API](https://cloro.dev). With them, any coding agent can get the answers that ChatGPT, Gemini, Google AI Mode and Google AI Overview give, and the Google Search and Google News results, as structured JSON. The agent can track a brand in AI answers, track Google rankings and collect AI answers at volume.
+Agent skills for the [cloro API](https://cloro.dev). With them, any coding agent can get the answers that ChatGPT, Gemini, Google AI Mode, Bing AI Mode and Google AI Overview give, and the Google Search and Google News results, as structured JSON. The agent can track a brand in AI answers, track Google rankings and collect AI answers at volume.
 
 A skill is a folder with a `SKILL.md` file and, where necessary, reference files. Any agent that reads `SKILL.md` files can use these skills: Claude Code, Codex, Cursor and others.
 
@@ -24,6 +24,7 @@ For an agent that calls tools at run time, also connect the [cloro MCP server](h
 | [`chatgpt`](skills/chatgpt/SKILL.md) | ChatGPT answers with citations, shopping cards, ads and the query fan-out |
 | [`gemini`](skills/gemini/SKILL.md) | Gemini answers with grounded sources, places and shopping cards |
 | [`google-ai-mode`](skills/google-ai-mode/SKILL.md) | Google AI Mode answers with sources, citation pills, places, shopping cards and ads |
+| [`bing-ai-mode`](skills/bing-ai-mode/SKILL.md) | Bing AI Mode answers with sources and citation pills, by country and US state |
 | [`google-ai-overview`](skills/google-ai-overview/SKILL.md) | The Google AI Overview and all its cited sources, by keyword and location |
 | [`google-search`](skills/google-search/SKILL.md) | Google results as JSON: organic results, People Also Ask, local pack, shopping, ads. City and device targeting, up to 10 pages, raw HTML |
 | [`google-news`](skills/google-news/SKILL.md) | Google News articles with source, date and thumbnail |

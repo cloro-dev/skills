@@ -1,6 +1,6 @@
 ---
 name: llm-answer-monitoring
-description: 'Use to collect AI answers at volume: run a set of prompts across ChatGPT, Gemini, Google AI Mode and the Google AI Overview, once or on a schedule, and store every answer with its sources. Use it to build a dataset of ChatGPT answers for research, monitor how AI answers change over time, run a long-running LLM scraping pipeline, sustain high volume without blocks, or replace an in-house headless browser farm. Uses async tasks, batches of up to 500 and webhooks. For brand metrics on top of the answers, use ai-visibility-tracking. For one call, use the engine skill.'
+description: 'Use to collect AI answers at volume: run a set of prompts across ChatGPT, Gemini, Google AI Mode, Bing AI Mode and the Google AI Overview, once or on a schedule, and store every answer with its sources. Use it to build a dataset of ChatGPT answers for research, monitor how AI answers change over time, run a long-running LLM scraping pipeline, sustain high volume without blocks, or replace an in-house headless browser farm. Uses async tasks, batches of up to 500 and webhooks. For brand metrics on top of the answers, use ai-visibility-tracking. For one call, use the engine skill.'
 license: MIT
 metadata:
   author: cloro
@@ -27,9 +27,10 @@ Collect answers for many prompts from many AI engines, and store them. cloro run
 | ChatGPT | `CHATGPT` | `prompt` | 5 (7 with `include.searchQueries` or `include.shopping`) |
 | Gemini | `GEMINI` | `prompt` | 4 |
 | Google AI Mode | `AIMODE` | `prompt` | 4 |
+| Bing AI Mode | `BING_AIMODE` | `prompt` | 4 |
 | Google AI Overview | `GOOGLE` with `include.aioverview` | `query` | 5 |
 
-`state` adds +2 on ChatGPT and Gemini. Async tasks pay no sync surcharge.
+`state` adds +2 on ChatGPT, Gemini and Bing AI Mode. Async tasks pay no sync surcharge.
 
 ## Submit a batch
 

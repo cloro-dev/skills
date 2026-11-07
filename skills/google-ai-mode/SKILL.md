@@ -60,5 +60,6 @@ The AI Mode response has no field for the search queries behind the answer. Goog
 ## Read next
 
 - `google-ai-overview`: the AI Overview on the normal results page.
+- `bing-ai-mode`: the Bing AI Mode answer for the same prompt.
 - `llm-answer-monitoring`: AI Mode and other engines for a prompt set.
 - `cloro-api`: errors, limits and countries (`GET /v1/countries?model=aimode`).

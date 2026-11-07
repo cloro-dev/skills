@@ -1,6 +1,6 @@
 ---
 name: ai-visibility-tracking
-description: 'Use to measure a brand in AI answers: how often ChatGPT, Gemini, Google AI Mode and the Google AI Overview name the brand, which pages they cite, the citation share against rival brands, and the change over time. Use it for AI visibility tracking, generative engine optimization (GEO) metrics, a share-of-voice dashboard, structured citation data from AI search engines for a data pipeline, or "is ChatGPT recommending us". For raw answer collection at volume, use llm-answer-monitoring.'
+description: 'Use to measure a brand in AI answers: how often ChatGPT, Gemini, Google AI Mode, Bing AI Mode and the Google AI Overview name the brand, which pages they cite, the citation share against rival brands, and the change over time. Use it for AI visibility tracking, generative engine optimization (GEO) metrics, a share-of-voice dashboard, structured citation data from AI search engines for a data pipeline, or "is ChatGPT recommending us". For raw answer collection at volume, use llm-answer-monitoring.'
 license: MIT
 metadata:
   author: cloro
@@ -44,7 +44,7 @@ Where to read:
 
 | Engine | Text | Sources |
 |---|---|---|
-| ChatGPT, Gemini, AI Mode | `text` | `sources[].url` |
+| ChatGPT, Gemini, Google AI Mode, Bing AI Mode | `text` | `sources[].url` |
 | AI Overview | `aioverview.text` | `aioverview.sources[].url` |
 
 Match brand names case-insensitively, on word boundaries. Match domains on the host, with and without `www.`. ChatGPT also returns `entities`, a list of the products and brands it named. Use it to check the text match.
@@ -64,7 +64,7 @@ Say what the numbers cover: the engines, countries, prompts, runs and dates. Do 
 
 - Do not report one run of one prompt as the brand's visibility.
 - Do not count a source on a rival's domain as a mention of the brand.
-- Do not claim Grok, Perplexity, Copilot, Claude or Bing results. cloro does not return them.
+- Do not claim Grok, Perplexity, Copilot or Claude results, or Bing web search results. cloro does not return them.
 
 ## Read next
 
