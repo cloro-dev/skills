@@ -16,7 +16,7 @@ Source: <https://cloro.dev/docs/guides/making-requests/async>, <https://cloro.de
 
 | Field | Required | Use |
 |---|---|---|
-| `taskType` | Yes | `CHATGPT`, `GEMINI`, `AIMODE`, `GOOGLE`, `GOOGLE_NEWS`, `GOOGLE_PRODUCT` |
+| `taskType` | Yes | `CHATGPT`, `GEMINI`, `AIMODE`, `BING_AIMODE`, `GOOGLE`, `GOOGLE_NEWS`, `GOOGLE_PRODUCT` |
 | `payload` | Yes | The same body as the sync request for that surface |
 | `priority` | No | 1 to 10. Higher runs first. Default 1 |
 | `idempotencyKey` | No | A unique string across the account. A key used before returns `409` with `error.details.taskId` |

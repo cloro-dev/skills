@@ -32,6 +32,7 @@ Generic MCP config:
 | `scrape_chatgpt` | `POST /v1/monitor/chatgpt` |
 | `scrape_gemini` | `POST /v1/monitor/gemini` |
 | `scrape_google_ai_mode` | `POST /v1/monitor/aimode` |
+| `scrape_bing_aimode` | `POST /v1/monitor/bing/aimode` |
 | `scrape_google` | `POST /v1/monitor/google` (set `include.aioverview` for the AI Overview) |
 | `scrape_google_news` | `POST /v1/monitor/google/news` |
 | `resolve_google_redirect` | `POST /v1/monitor/google/goto` |
