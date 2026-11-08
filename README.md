@@ -27,10 +27,14 @@ For an agent that calls tools at run time, also connect the [cloro MCP server](h
 | [`bing-ai-mode`](skills/bing-ai-mode/SKILL.md) | Bing AI Mode answers with sources and citation pills, by country and US state |
 | [`google-ai-overview`](skills/google-ai-overview/SKILL.md) | The Google AI Overview and all its cited sources, by keyword and location |
 | [`google-search`](skills/google-search/SKILL.md) | Google results as JSON: organic results, People Also Ask, local pack, shopping, ads. City and device targeting, up to 10 pages, raw HTML |
+| [`web-search`](skills/web-search/SKILL.md) | Live web search for an agent or a RAG pipeline: one Google search, returned as a short context with the AI Overview, the top results and their links |
 | [`google-news`](skills/google-news/SKILL.md) | Google News articles with source, date and thumbnail |
 | [`serp-research`](skills/serp-research/SKILL.md) | Rank tracking and SERP research at scale: thousands of keywords a day, on a schedule, into a warehouse |
 | [`llm-answer-monitoring`](skills/llm-answer-monitoring/SKILL.md) | Collect AI answers for a prompt set across engines, once or on a schedule, at volume. Build a dataset of AI answers |
 | [`ai-visibility-tracking`](skills/ai-visibility-tracking/SKILL.md) | Measure a brand in AI answers: mention rate, citation share and the rival brands that the engines name |
+| [`ai-seo-audit`](skills/ai-seo-audit/SKILL.md) | AI SEO (GEO, AEO) audit: the prompts where rivals are named and the brand is not, the pages the engines cite, and the actions to take |
+| [`serp-analysis`](skills/serp-analysis/SKILL.md) | Analyze the Google results page for a keyword: intent, ranking page types, AI Overview sources, People Also Ask, and a content brief |
+| [`deep-research`](skills/deep-research/SKILL.md) | Research a topic across many Google and Google News searches and AI answers, and write a report with a dated source for each claim |
 
 ## How cloro gets the data
 

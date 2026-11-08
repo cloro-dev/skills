@@ -46,7 +46,7 @@ Google News has no sub-country targeting: no `location`, `uule` or `state`.
 | `thumbnail` | Image URL, when present |
 | `redirectLink` | A Google `goto` URL, when Google served one. Resolve it with `POST /v1/monitor/google/goto` |
 
-`date` is relative text, not a timestamp. Convert it with the request time if you need a date.
+`date` is text, not a timestamp. Recent articles have a relative date ("2 hours ago"). Older articles have a date ("Sep 10, 2026"). Convert the relative form with the request time if you need a date.
 
 ## Cost
 

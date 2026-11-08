@@ -1,6 +1,6 @@
 ---
 name: ai-visibility-tracking
-description: 'Use to measure a brand in AI answers: how often ChatGPT, Gemini, Google AI Mode, Bing AI Mode and the Google AI Overview name the brand, which pages they cite, the citation share against rival brands, and the change over time. Use it for AI visibility tracking, generative engine optimization (GEO) metrics, a share-of-voice dashboard, structured citation data from AI search engines for a data pipeline, or "is ChatGPT recommending us". For raw answer collection at volume, use llm-answer-monitoring.'
+description: 'Use to measure a brand in AI answers: how often ChatGPT, Gemini, Google AI Mode, Bing AI Mode and the Google AI Overview name the brand, which pages they cite, the citation share against rival brands, and the change over time. Use it for AI visibility tracking, generative engine optimization (GEO) metrics, a share-of-voice dashboard, structured citation data from AI search engines for a data pipeline, or "is ChatGPT recommending us". To find what to change, use ai-seo-audit. For raw answer collection at volume, use llm-answer-monitoring.'
 license: MIT
 metadata:
   author: cloro
