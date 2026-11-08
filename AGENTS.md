@@ -11,6 +11,8 @@
 
 ## Editing rules
 
+Commit directly to `main`. This repo needs no branch and no pull request. CI runs on each push.
+
 1. Each fact comes from the cloro docs (<https://cloro.dev/docs>) or the OpenAPI spec. When a skill and the API reference do not agree, the API reference is correct. Change the skill.
 2. Write credit counts exactly. Do not round them. Prices in USD go on the pricing page, not here, because they change.
 3. Do not name rival vendors.
