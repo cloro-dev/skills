@@ -5,8 +5,9 @@
 - `README.md`: install and the table of skills.
 - `skills/<name>/SKILL.md`: one skill. The frontmatter `name` is the folder name.
 - `skills/<name>/references/*.md`: facts that a skill reads only when necessary.
-- `.github/scripts/check_skills.sh`: the CI check (frontmatter, name, length).
+- `.github/workflows/check.yml`: the CI check (frontmatter, name, length). The check runs inline in the workflow. Do not move it into a script file.
 - `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, `.claude-plugin/icon.png`, `.mcp.json`: the Claude Code plugin. The repo root is the plugin, and the repo is also its own marketplace. The plugin loads every skill under `skills/` and the remote MCP server at `https://mcp.cloro.dev/mcp` (OAuth sign-in, no key in the repo). Run `claude plugin validate . --strict` after you change any of these files. Raise `version` in `plugin.json` for each release that changes the plugin. Do not change `icon.png`: the claude.ai directory keeps the first icon it receives.
+- Keep every file in the repo Markdown, text, JSON, YAML or an image, and start no file with `#!`. The claude.ai directory refuses any other file (scripts, programs, package manager files) from organizations that Anthropic has not verified. It refused v0.1.0 on 2026-11-08 for `.github/scripts/check_skills.sh`.
 
 ## Editing rules
 
