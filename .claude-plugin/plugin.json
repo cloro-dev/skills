@@ -1,0 +1,27 @@
+{
+  "name": "cloro",
+  "displayName": "cloro",
+  "version": "0.1.0",
+  "description": "Live search and AI answer data for agents: Google Search, Google News and AI Overview results, and ChatGPT, Gemini, Google AI Mode and Bing AI Mode answers as structured JSON. 15 skills and the cloro MCP server.",
+  "author": {
+    "name": "cloro",
+    "email": "info@cloro.dev",
+    "url": "https://cloro.dev"
+  },
+  "homepage": "https://cloro.dev/docs/integrations/skills",
+  "privacyPolicyUrl": "https://cloro.dev/privacy/",
+  "repository": "https://github.com/cloro-dev/skills",
+  "license": "MIT",
+  "keywords": [
+    "web-search",
+    "serp-api",
+    "google-search",
+    "ai-overview",
+    "chatgpt",
+    "gemini",
+    "ai-seo",
+    "geo",
+    "deep-research",
+    "mcp"
+  ]
+}

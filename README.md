@@ -6,6 +6,16 @@ A skill is a folder with a `SKILL.md` file and, where necessary, reference files
 
 ## Install
 
+In Claude Code, install the cloro plugin. It adds the 15 skills and connects the cloro MCP server:
+
+```
+/plugin install cloro --marketplace cloro-dev/skills
+```
+
+This works in one step on Claude Code 2.1.275 or later. On an earlier version, run `/plugin marketplace add cloro-dev/skills`, then `/plugin install cloro@cloro`. The MCP server asks you to sign in to cloro the first time a tool runs.
+
+For other agents (Codex, Cursor and others), add the skills only:
+
 ```bash
 npx skills add cloro-dev/skills
 ```
