@@ -1,0 +1,17 @@
+{
+  "name": "cloro",
+  "description": "The cloro plugin: skills and the MCP server for the cloro API",
+  "owner": {
+    "name": "cloro",
+    "email": "info@cloro.dev",
+    "url": "https://cloro.dev"
+  },
+  "plugins": [
+    {
+      "name": "cloro",
+      "source": "./",
+      "description": "Live search and AI answer data for agents: Google Search, Google News and AI Overview results, and ChatGPT, Gemini, Google AI Mode and Bing AI Mode answers as structured JSON. 15 skills and the cloro MCP server.",
+      "category": "development"
+    }
+  ]
+}
