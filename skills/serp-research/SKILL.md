@@ -1,6 +1,6 @@
 ---
 name: serp-research
-description: 'Use for Google rank tracking and SERP research at scale: track thousands of keywords a day, top 100 positions, by country, city and device, with the AI Overview, local pack and shopping results, on a schedule, and load the results into a warehouse such as BigQuery. Use it for an SEO agency rank tracker, ecommerce price and ranking monitoring, SERP feature tracking, or market research from search results. For one search, use google-search. For AI answers, use llm-answer-monitoring.'
+description: 'Use for Google rank tracking and SERP research at scale: track thousands of keywords a day, top 100 positions, by country, city and device, with the AI Overview, local pack and shopping results, on a schedule, and load the results into a warehouse such as BigQuery. Use it for an SEO agency rank tracker, ecommerce price and ranking monitoring, SERP feature tracking, or market research from search results. For one search, use google-search. To analyze one results page, use serp-analysis. For AI answers, use llm-answer-monitoring.'
 license: MIT
 metadata:
   author: cloro

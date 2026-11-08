@@ -1,6 +1,6 @@
 ---
 name: cloro-api
-description: 'Start here for any task that uses the cloro API: setup, the API key, the MCP server, the Python or TypeScript SDK, sync or async requests, batches, webhooks, credits and cost, "bills only for successful requests", retries, timeouts, CAPTCHAs and blocks, rate limits, "100 requests per second", concurrency, supported countries and US states, errors such as 401, 403, 429 and MODEL_UNAVAILABLE, "do I need my own proxies", and data and compliance questions (GDPR, the DPA, data retention). Also use it to pick a search or AI answer API to call as a tool inside an agent. For one engine, use its own skill (chatgpt, gemini, google-ai-mode, bing-ai-mode, google-ai-overview, google-search, google-news). For a workflow, use serp-research, llm-answer-monitoring or ai-visibility-tracking.'
+description: 'Start here for any task that uses the cloro API: setup, the API key, the MCP server, the Python or TypeScript SDK, sync or async requests, batches, webhooks, credits and cost, "bills only for successful requests", retries, timeouts, CAPTCHAs and blocks, rate limits, "100 requests per second", concurrency, supported countries and US states, errors such as 401, 403, 429 and MODEL_UNAVAILABLE, "do I need my own proxies", and data and compliance questions (GDPR, the DPA, data retention). Also use it to pick a search or AI answer API to call as a tool inside an agent. To give an agent live web search, use web-search. For one engine, use its own skill (chatgpt, gemini, google-ai-mode, bing-ai-mode, google-ai-overview, google-search, google-news). For a workflow, use serp-research, serp-analysis, llm-answer-monitoring, ai-visibility-tracking, ai-seo-audit or deep-research.'
 license: MIT
 metadata:
   author: cloro
@@ -20,6 +20,7 @@ cloro is one REST API for the answers of AI assistants and the results of Google
 | Bing AI Mode | `POST /v1/monitor/bing/aimode` | `BING_AIMODE` | `bing-ai-mode` |
 | Google AI Overview | `POST /v1/monitor/google` with `include.aioverview` | `GOOGLE` | `google-ai-overview` |
 | Google Search | `POST /v1/monitor/google` | `GOOGLE` | `google-search` |
+| Web search for an agent or RAG | `POST /v1/monitor/google` with `include.aioverview` | `GOOGLE` | `web-search` |
 | Google News | `POST /v1/monitor/google/news` | `GOOGLE_NEWS` | `google-news` |
 
 AI surfaces take `prompt`. Google Search and Google News take `query`. All endpoints need `country`, an uppercase ISO 3166-1 alpha-2 code. There is no default country.
