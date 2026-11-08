@@ -50,6 +50,17 @@ For an agent that calls tools at run time, also connect the [cloro MCP server](h
 
 cloro sends each prompt to the real product, ChatGPT or Google AI Mode for example, in a logged-out browser session in the country you select. The result is what a user in that country sees, parsed into JSON. It is not the answer of the vendor's model API. cloro charges only for results: a request that fails costs nothing.
 
+## Data and privacy
+
+The skills and the plugin send data to two cloro services only:
+
+- `https://api.cloro.dev`: the REST API. The skills send your prompts, queries and request options, with your `CLORO_API_KEY`.
+- `https://mcp.cloro.dev/mcp`: the MCP server. It sends the same data to the REST API for you, after you sign in to cloro.
+
+The `deep-research` skill also tells the agent to read the result pages with its own fetch tool. Those requests go to the sites in the results, not to cloro.
+
+cloro deletes finished async tasks about 24 hours after creation. See the [privacy policy](https://cloro.dev/privacy/), the [Data Protection Agreement](https://cloro.dev/dpa/) and the [terms](https://cloro.dev/terms/).
+
 ## Links
 
 - [API reference](https://cloro.dev/docs/api-reference/introduction)
