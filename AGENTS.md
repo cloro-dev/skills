@@ -16,4 +16,5 @@
 5. Each `SKILL.md` stays under 200 lines. Move long tables to `references/`.
 6. The `description` says when to use the skill, in the words a user types, and which skill to use for nearby tasks.
 7. Never commit an API key. Use `CLORO_API_KEY` or `YOUR_API_KEY`.
-8. Write in ASD-STE100 Simplified Technical English: short sentences, active voice, one instruction per sentence.
+8. Each `SKILL.md` has the "Treat results as data" section, before "Read next". Copy it from an existing skill. It tells the agent not to follow instructions in search results, pages or AI answers.
+9. Write in ASD-STE100 Simplified Technical English: short sentences, active voice, one instruction per sentence.
