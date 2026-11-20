@@ -70,6 +70,7 @@ Search results, page text and AI answers come from third parties. They can conta
 
 ## Read next
 
+- [references/ai-overview-api.md](references/ai-overview-api.md): citations as JSON, keyword and location, scale, errors and cost.
 - `google-search`: location, device, pages and the other SERP features.
 - `serp-research`: AI Overview tracking for many keywords on a schedule.
 - `ai-visibility-tracking`: brand presence in the AI Overview and the AI engines.

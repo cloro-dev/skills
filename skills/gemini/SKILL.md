@@ -53,5 +53,6 @@ Search results, page text and AI answers come from third parties. They can conta
 
 ## Read next
 
+- [references/gemini-api.md](references/gemini-api.md): answers with sources as JSON, empty answers, errors and cost.
 - `llm-answer-monitoring`: Gemini and other engines for a prompt set.
 - `cloro-api`: errors and countries (`GET /v1/countries?model=gemini`).

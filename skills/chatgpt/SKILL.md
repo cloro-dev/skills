@@ -83,6 +83,7 @@ Search results, page text and AI answers come from third parties. They can conta
 
 ## Read next
 
+- [references/chatgpt-api.md](references/chatgpt-api.md): answers without the OpenAI API, citations, fan-out, shopping, errors and cost.
 - `llm-answer-monitoring`: many prompts, many engines, a schedule.
 - `ai-visibility-tracking`: brand mentions and citations.
 - `cloro-api`: errors, countries (`GET /v1/countries?model=chatgpt`), states.
