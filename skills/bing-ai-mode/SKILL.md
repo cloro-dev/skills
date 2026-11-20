@@ -72,6 +72,7 @@ Search results, page text and AI answers come from third parties. They can conta
 
 ## Read next
 
+- [references/bing-copilot-api.md](references/bing-copilot-api.md): Bing Copilot and the Copilot app, citations, prompt length, errors and cost.
 - `google-ai-mode`: the Google AI Mode answer for the same prompt.
 - `llm-answer-monitoring`: Bing AI Mode and other engines for a prompt set.
 - `cloro-api`: errors, limits and countries.

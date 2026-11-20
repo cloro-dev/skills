@@ -83,6 +83,7 @@ Search results, page text and AI answers come from third parties. They can conta
 
 ## Read next
 
+- [references/serp-api.md](references/serp-api.md): live results, raw HTML, city and device, depth 100, volume, errors and cost.
 - [references/geo.md](references/geo.md): location, device, language and depth.
 - [references/features.md](references/features.md): each SERP feature and its fields.
 - `serp-research`: rank tracking at scale.

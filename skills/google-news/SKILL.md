@@ -62,5 +62,6 @@ Search results, page text and AI answers come from third parties. They can conta
 
 ## Read next
 
+- [references/google-news-api.md](references/google-news-api.md): country and language, scale, dates, errors and cost.
 - `google-search`: the main results page.
 - `cloro-api`: async batches for many queries.

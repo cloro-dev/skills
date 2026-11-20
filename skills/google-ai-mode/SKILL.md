@@ -67,6 +67,7 @@ Search results, page text and AI answers come from third parties. They can conta
 
 ## Read next
 
+- [references/ai-mode-api.md](references/ai-mode-api.md): citations, location, the missing fan-out, errors and cost.
 - `google-ai-overview`: the AI Overview on the normal results page.
 - `bing-ai-mode`: the Bing AI Mode answer for the same prompt.
 - `llm-answer-monitoring`: AI Mode and other engines for a prompt set.
