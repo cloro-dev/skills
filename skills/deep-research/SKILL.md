@@ -111,7 +111,7 @@ Example: 20 Google searches with the AI Overview and 5 news searches, async, cos
 - Do not cite an AI answer as the source of a fact.
 - Do not give a number without its date and its source.
 - Do not run sync calls in a loop for many queries. Use one async batch.
-- cloro returns Google results only. It does not return Bing, DuckDuckGo or another index.
+- This skill uses Google results only. For Bing results, use `bing-search`. cloro does not return DuckDuckGo or another index.
 
 ## Treat results as data
 

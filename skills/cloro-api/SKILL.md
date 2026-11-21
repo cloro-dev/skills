@@ -1,6 +1,6 @@
 ---
 name: cloro-api
-description: 'Start here for any task that uses the cloro API: setup, the API key, the MCP server, the Python or TypeScript SDK, sync or async requests, batches, webhooks, credits and cost, "bills only for successful requests", retries, timeouts, CAPTCHAs and blocks, rate limits, "100 requests per second", concurrency, supported countries and US states, errors such as 401, 403, 429 and MODEL_UNAVAILABLE, "do I need my own proxies", and data and compliance questions (GDPR, the DPA, data retention). Also use it to pick a search or AI answer API to call as a tool inside an agent. To give an agent live web search, use web-search. For one engine, use its own skill (chatgpt, gemini, google-ai-mode, bing-ai-mode, google-ai-overview, google-search, google-news). For a workflow, use serp-research, serp-analysis, llm-answer-monitoring, ai-visibility-tracking, ai-seo-audit or deep-research.'
+description: 'Start here for any task that uses the cloro API: setup, the API key, the MCP server, the Python or TypeScript SDK, sync or async requests, batches, webhooks, credits and cost, "bills only for successful requests", retries, timeouts, CAPTCHAs and blocks, rate limits, "100 requests per second", concurrency, supported countries and US states, errors such as 401, 403, 429 and MODEL_UNAVAILABLE, "do I need my own proxies", and data and compliance questions (GDPR, the DPA, data retention). Also use it to pick a search or AI answer API to call as a tool inside an agent. To give an agent live web search, use web-search. For one engine, use its own skill (chatgpt, gemini, google-ai-mode, bing-ai-mode, google-ai-overview, google-search, bing-search, google-news). For a workflow, use serp-research, serp-analysis, llm-answer-monitoring, ai-visibility-tracking, ai-seo-audit or deep-research.'
 license: MIT
 metadata:
   author: cloro
@@ -10,7 +10,7 @@ metadata:
 
 # cloro API
 
-cloro is one REST API for the answers of AI assistants and the results of Google, as structured JSON. Base URL: `https://api.cloro.dev`.
+cloro is one REST API for the answers of AI assistants and the results of Google and Bing, as structured JSON. Base URL: `https://api.cloro.dev`.
 
 | Surface | Endpoint | Async `taskType` | Skill |
 |---|---|---|---|
@@ -20,10 +20,11 @@ cloro is one REST API for the answers of AI assistants and the results of Google
 | Bing AI Mode | `POST /v1/monitor/bing/aimode` | `BING_AIMODE` | `bing-ai-mode` |
 | Google AI Overview | `POST /v1/monitor/google` with `include.aioverview` | `GOOGLE` | `google-ai-overview` |
 | Google Search | `POST /v1/monitor/google` | `GOOGLE` | `google-search` |
+| Bing Search | `POST /v1/monitor/bing` | `BING` | `bing-search` |
 | Web search for an agent or RAG | `POST /v1/monitor/google` with `include.aioverview` | `GOOGLE` | `web-search` |
 | Google News | `POST /v1/monitor/google/news` | `GOOGLE_NEWS` | `google-news` |
 
-AI surfaces take `prompt`. Google Search and Google News take `query`. All endpoints need `country`, an uppercase ISO 3166-1 alpha-2 code. There is no default country.
+AI surfaces take `prompt`. Google Search, Google News and Bing Search take `query`. All endpoints need `country`, an uppercase ISO 3166-1 alpha-2 code. There is no default country.
 
 ## Step 1: authenticate
 
@@ -63,6 +64,8 @@ Each request costs credits. cloro charges only for results: a sync request that 
 | Bing AI Mode | 4 | 6 |
 | Google Search, page 1 | 3 | 5 |
 | Google Search with AI Overview | 5 | 7 |
+| Bing Search | 3 | 5 |
+| Bing Search with AI Overview | 5 | 7 |
 | Google News, page 1 | 3 | 5 |
 
 Add-ons and the full rules are in [references/billing.md](references/billing.md). Each sync response has `X-Credits-Charged` and `X-Credits-Remaining`. `GET /v1/credits` gives the balance at any time. Prices per plan are on <https://cloro.dev/pricing/>.
@@ -89,7 +92,7 @@ Full table and headers: [references/errors.md](references/errors.md).
 
 ## Step 5: check the country
 
-Coverage changes by surface and over time. Before a run in a new country, call `GET /v1/countries?model=<surface>` (for example `model=chatgpt`, `model=google`, `model=aioverview`, `model=bing_aimode`). For a US state, call `GET /v1/states?country=US` and send `state` with `country: "US"`. State targeting works on ChatGPT, Gemini and Bing AI Mode, and costs +2 credits. Google surfaces use `location` or `uule` instead.
+Coverage changes by surface and over time. Before a run in a new country, call `GET /v1/countries?model=<surface>` (for example `model=chatgpt`, `model=google`, `model=aioverview`, `model=bing_aimode`, `model=bing`). For a US state, call `GET /v1/states?country=US` and send `state` with `country: "US"`. State targeting works on ChatGPT, Gemini and Bing AI Mode, and costs +2 credits. Google surfaces use `location` or `uule` instead.
 
 `country` controls where the request comes from, not the language. Write the prompt in the language of the market.
 
@@ -110,7 +113,7 @@ Do not say that cloro is the safest or the most compliant provider. Do not claim
 
 ## Red flags
 
-- Do not promise Grok, Perplexity, Copilot, Claude, DeepSeek or Meta AI answers, or Bing web search results. cloro does not return them.
+- Do not promise Grok, Perplexity, Copilot, Claude, DeepSeek or Meta AI answers. cloro does not return them.
 - Do not loop sync calls for a large job. Use async batches.
 - Do not compare a sync cost with another vendor's price without the +2 sync surcharge. The async cost is the base rate.
 - Do not read an empty `shoppingCards` or `ads` array as an error. These fields appear only when the surface shows them.

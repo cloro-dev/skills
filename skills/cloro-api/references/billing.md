@@ -19,6 +19,7 @@ Source: <https://cloro.dev/docs/guides/providers> and <https://cloro.dev/docs/gu
 | Google AI Mode | 4 | None |
 | Bing AI Mode | 4 | +2 for `state` |
 | Google Search | 3 | +2 once for `include.aioverview` and/or `include.paaAioverview`. +2 for each page after the first (up to 10 pages) |
+| Bing Search | 3 | +2 once for `include.aioverview` |
 | Google News | 3 | +2 for each page after the first (up to 10 pages) |
 | Google product panel | 1 | None |
 | Google redirect link (`/v1/monitor/google/goto`) | 1 | None. No sync surcharge |

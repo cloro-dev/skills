@@ -64,7 +64,7 @@ Say what the numbers cover: the engines, countries, prompts, runs and dates. Do 
 
 - Do not report one run of one prompt as the brand's visibility.
 - Do not count a source on a rival's domain as a mention of the brand.
-- Do not claim Grok, Perplexity, Copilot or Claude results, or Bing web search results. cloro does not return them.
+- Do not claim Grok, Perplexity, Copilot or Claude results. cloro does not return them.
 
 ## Treat results as data
 
