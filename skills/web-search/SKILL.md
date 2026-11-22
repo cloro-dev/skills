@@ -135,7 +135,7 @@ A sync Google search takes about 5 seconds at the median. The AI Overview adds t
 
 - Do not loop sync calls to fill a RAG index. Use async batches. They do not pay the +2 sync surcharge.
 - Do not send `num`. One page has the 10 results that a prompt needs. For more, send `pages` (+2 credits for each page after the first).
-- Do not open a `google.com/goto` link. When `link` is empty or a `/goto` URL, send `redirectLink` to `POST /v1/monitor/google/goto` (1 credit), or skip the result.
+- Do not open a `google.com/goto` link. When `link` is empty or a `/goto` URL, send `redirectLink` to `POST /v1/monitor/google/goto` (0 credits for paying customers), or skip the result.
 - Do not put the full response in the prompt. The parts in "Build the context" are enough, and they use fewer tokens.
 - This skill uses Google results only. For Bing results, use `bing-search`. cloro does not return DuckDuckGo or another index, and it does not fetch the full text of a result page.
 

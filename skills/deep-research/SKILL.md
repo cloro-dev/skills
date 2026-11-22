@@ -68,7 +68,7 @@ From each response, keep:
 
 Remove duplicate URLs. Rank the pages: primary sources first (official statistics, filings, papers, the company's own pages), then good secondary sources, then forums. Read the top 10 to 30 pages with your fetch tool. For each fact, record the claim, the URL, the publisher and the date of the page.
 
-If a `link` is empty or a `google.com/goto` URL, send `redirectLink` to `POST /v1/monitor/google/goto` (1 credit) or use the MCP tool `resolve_google_redirect`.
+If a `link` is empty or a `google.com/goto` URL, send `redirectLink` to `POST /v1/monitor/google/goto` (0 credits for paying customers) or use the MCP tool `resolve_google_redirect`.
 
 ## Step 5: compare with the AI engines
 

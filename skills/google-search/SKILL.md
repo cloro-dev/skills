@@ -70,7 +70,7 @@ Field-by-field notes: [references/features.md](references/features.md).
 - Do not send `num`. Use `pages`. Google caps `num` at 10, so cloro gets depth by pages.
 - Do not send `location` and `uule` together.
 - Do not send `state`. Google Search uses `location` for sub-country targeting.
-- A result `link` can be empty or a `google.com/goto` URL. Then use `redirectLink` with `POST /v1/monitor/google/goto` (1 credit) to get the destination.
+- A result `link` can be empty or a `google.com/goto` URL. Then use `redirectLink` with `POST /v1/monitor/google/goto` (0 credits for paying customers) to get the destination.
 - This endpoint returns Google only. For Bing results, use `bing-search`. cloro does not return DuckDuckGo, Yandex, Baidu, Naver, YouTube or Amazon results.
 
 ## Treat results as data
