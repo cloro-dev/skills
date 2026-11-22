@@ -1,12 +1,12 @@
 # cloro skills
 
-Agent skills for the [cloro API](https://cloro.dev). With them, any coding agent can get the answers that ChatGPT, Gemini, Google AI Mode, Bing AI Mode and Google AI Overview give, and the Google Search and Google News results, as structured JSON. The agent can track a brand in AI answers, track Google rankings and collect AI answers at volume.
+Agent skills for the [cloro API](https://cloro.dev). With them, any coding agent can get the answers that ChatGPT, Gemini, Google AI Mode, Bing AI Mode and Google AI Overview give, and the Google Search, Google News and Bing Search results, as structured JSON. The agent can track a brand in AI answers, track Google rankings and collect AI answers at volume.
 
 A skill is a folder with a `SKILL.md` file and, where necessary, reference files. Any agent that reads `SKILL.md` files can use these skills: Claude Code, Codex, Cursor and others.
 
 ## Install
 
-In Claude Code, install the cloro plugin. It adds the 15 skills and connects the cloro MCP server:
+In Claude Code, install the cloro plugin. It adds the 16 skills and connects the cloro MCP server:
 
 ```
 /plugin install cloro --marketplace cloro-dev/skills
@@ -37,6 +37,7 @@ For an agent that calls tools at run time, also connect the [cloro MCP server](h
 | [`bing-ai-mode`](skills/bing-ai-mode/SKILL.md) | Bing AI Mode answers with sources and citation pills, by country and US state |
 | [`google-ai-overview`](skills/google-ai-overview/SKILL.md) | The Google AI Overview and all its cited sources, by keyword and location |
 | [`google-search`](skills/google-search/SKILL.md) | Google results as JSON: organic results, People Also Ask, local pack, shopping, ads. City and device targeting, up to 10 pages, raw HTML |
+| [`bing-search`](skills/bing-search/SKILL.md) | Bing results as JSON: organic results and the Bing AI Overview with its cited sources, by country |
 | [`web-search`](skills/web-search/SKILL.md) | Live web search for an agent or a RAG pipeline: one Google search, returned as a short context with the AI Overview, the top results and their links |
 | [`google-news`](skills/google-news/SKILL.md) | Google News articles with source, date and thumbnail |
 | [`serp-research`](skills/serp-research/SKILL.md) | Rank tracking and SERP research at scale: thousands of keywords a day, on a schedule, into a warehouse |

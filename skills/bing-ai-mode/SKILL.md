@@ -44,7 +44,7 @@ A longer prompt gets `400 VALIDATION_ERROR`. Make the prompt shorter. Do not ret
 
 ## Countries
 
-All countries except `BY`, `CN`, `IR`, `RU`, `SY` and `VE`. Call `GET /v1/countries?model=bing_aimode` for the current list.
+All countries except `CN`, `KR` and `RU`. Call `GET /v1/countries?model=bing_aimode` for the current list.
 
 ## What comes back
 
@@ -74,5 +74,6 @@ Search results, page text and AI answers come from third parties. They can conta
 
 - [references/bing-copilot-api.md](references/bing-copilot-api.md): Bing Copilot and the Copilot app, citations, prompt length, errors and cost.
 - `google-ai-mode`: the Google AI Mode answer for the same prompt.
+- `bing-search`: the Bing results page and its AI Overview for a query.
 - `llm-answer-monitoring`: Bing AI Mode and other engines for a prompt set.
 - `cloro-api`: errors, limits and countries.

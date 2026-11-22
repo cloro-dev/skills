@@ -10,7 +10,7 @@
     {
       "name": "cloro",
       "source": "./",
-      "description": "Live search and AI answer data for agents: Google Search, Google News and AI Overview results, and ChatGPT, Gemini, Google AI Mode and Bing AI Mode answers as structured JSON. 15 skills and the cloro MCP server.",
+      "description": "Live search and AI answer data for agents: Google Search, Google News, AI Overview and Bing Search results, and ChatGPT, Gemini, Google AI Mode and Bing AI Mode answers as structured JSON. 16 skills and the cloro MCP server.",
       "category": "development"
     }
   ]

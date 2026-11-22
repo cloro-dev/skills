@@ -24,7 +24,7 @@ A shopping card has a `productResultToken`. Send it to `POST /v1/monitor/google/
 
 ## Redirect links
 
-Google can serve a result as a `google.com/goto` URL. Then `link` can be empty and `redirectLink` holds the `goto` URL. Send it to `POST /v1/monitor/google/goto` to get the destination. It costs 1 credit, with no sync surcharge. A link that does not resolve returns `502 EXTERNAL_SERVICE_ERROR`.
+Google can serve a result as a `google.com/goto` URL. Then `link` can be empty and `redirectLink` holds the `goto` URL. Send it to `POST /v1/monitor/google/goto` to get the destination. It costs 0 credits for paying customers, with no sync surcharge. A link that does not resolve returns `502 EXTERNAL_SERVICE_ERROR`.
 
 ## Raw HTML
 

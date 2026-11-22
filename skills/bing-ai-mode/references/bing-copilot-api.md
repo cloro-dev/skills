@@ -35,7 +35,7 @@ Bing puts the prompt in the page URL. The limit is 3,500 characters after URL en
 
 ## Where does it work?
 
-All countries except `BY`, `CN`, `IR`, `RU`, `SY` and `VE`. `state` targets a US state with `country: "US"`. Bing AI Mode takes no `location`, `uule`, `hl` or `device`.
+All countries except `CN`, `KR` and `RU`. `state` targets a US state with `country: "US"`. Bing AI Mode takes no `location`, `uule`, `hl` or `device`.
 
 ## Errors
 
