@@ -33,10 +33,12 @@ Required: `query` and `country`.
 |---|---|
 | `query` | The search query. The limit is 3,500 characters after URL encoding |
 | `country` | ISO 3166-1 alpha-2. It sets Bing's market |
+| `pages` | Results pages to get, 1 to 10. Default 1. +2 credits for each page after the first |
+| `first` | The result to start at, as in Bing's own `first`. Default 1. `first: 41` is page 5 |
 | `include.aioverview` | `true`, or `{"markdown": true}` to also get `result.aioverview.markdown`. +2 credits |
-| `include.html` | Also return a URL of the page that Bing rendered. Free. The URL expires after 24 hours |
+| `include.html` | Also return a URL of each page that Bing rendered. Free. A URL expires after 24 hours |
 
-Bing Search takes no other parameters. It does not take `state`, `location`, `uule`, `hl`, `gl`, `device` or `pages`.
+Bing Search takes no other parameters. It does not take `state`, `location`, `uule`, `hl`, `gl` or `device`.
 
 ## Query length
 
@@ -50,21 +52,22 @@ All countries except `CN`, `KR` and `RU`. These are the same countries as Bing A
 
 | Field | Content |
 |---|---|
-| `result.organicResults` | The first results page: `position`, `title`, `link`, `displayedLink`, `snippet`, `page`, and `date` when Bing shows one. `link` is the destination URL, not Bing's click-tracking URL |
-| `result.aioverview` | Bing's AI summary: `text`, `sources`, `citationPills`, and `markdown` with `{"markdown": true}`. Only with `include.aioverview` |
-| `result.html` | An array with one URL. Only with `include.html` |
+| `result.organicResults` | The organic results of each page: `position`, `title`, `link`, `displayedLink`, `snippet`, `page`, and `date` when Bing shows one. `link` is the destination URL, not Bing's click-tracking URL. `position` continues across pages and counts from `first` |
+| `result.ads` | Text ads and shopping cards, in Google's ad shape. Returned on every request at no extra credit, and absent when the page has no ads |
+| `result.aioverview` | Bing's AI summary: `text`, `sources`, `citationPills`, and `markdown` with `{"markdown": true}`. Only with `include.aioverview`, and never with `first` above 1 |
+| `result.html` | An array with one URL for each page. Only with `include.html` |
 
-The fields have the same names and shapes as the Google Search fields. Code that reads `organicResults` and `aioverview` from `google-search` can read Bing results without changes.
+The fields have the same names and shapes as the Google Search fields. Code that reads `organicResults`, `ads` and `aioverview` from `google-search` can read Bing results without changes.
 
 `result.aioverview` is absent when Bing shows no AI summary for the query. That is a result, not an error. A source has `description: null` when Bing shows no snippet for it.
 
 ## Cost
 
-3 credits async, 5 sync. `include.aioverview` adds +2. cloro charges the +2 also when Bing shows no AI summary. `include.html` is free.
+3 credits async, 5 sync. Each page after the first adds +2. `include.aioverview` adds +2. cloro charges the +2 also when Bing shows no AI summary. `include.html` is free.
 
 ## Red flags
 
-- Do not send `pages`. cloro ignores it. Bing Search returns the first results page only.
+- Do not send `include.aioverview` with `first` above 1. Bing shows its AI summary only on the first page, and cloro charges the +2.
 - Do not send `state`, `location` or `device`. cloro ignores them. Use `country` for the market.
 - Do not send a `prompt`. For the Bing AI Mode answer, use `bing-ai-mode`.
 - Do not read a missing `aioverview` as an error. Bing does not show an AI summary for every query.

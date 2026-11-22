@@ -18,7 +18,7 @@ Source: <https://cloro.dev/docs/api-reference/endpoint/monitor-bing> and <https:
 
 Live results. cloro runs a new Bing search when you send the request and parses the page that Bing returned. cloro keeps no index of its own. Each request runs in a logged-out session through a proxy in the `country` you send.
 
-`result.organicResults` holds the first results page. Each result has `position`, `title`, `link`, `displayedLink`, `snippet`, `page`, and `date` when Bing shows one. `link` is the destination URL, not Bing's click-tracking URL. The shape is the same as Google Search `organicResults`.
+`result.organicResults` holds the organic results of each page you ask for. Send `pages` (1 to 10) for more pages, and `first` to start at a later result. Each result has `position`, `title`, `link`, `displayedLink`, `snippet`, `page`, and `date` when Bing shows one. `link` is the destination URL, not Bing's click-tracking URL. The shape is the same as Google Search `organicResults`.
 
 ## Does cloro return the Bing AI summary with its sources?
 
@@ -36,7 +36,7 @@ Bing puts the query in the page URL. The limit is 3,500 characters after URL enc
 
 ## What does Bing Search not return?
 
-It returns no page after the first: there is no `pages` parameter. It returns no People Also Ask, local pack, shopping cards, ads, related searches or knowledge graph. With `include.html: true`, `result.html` is an array with one URL of the page that Bing rendered. Download the HTML to read a feature that cloro does not parse.
+It returns no People Also Ask, local pack, related searches or knowledge graph, and no news, image or video results. It returns the ads, as `result.ads`. With `include.html: true`, `result.html` is an array with one URL of each page that Bing rendered. Download the HTML to read a feature that cloro does not parse.
 
 ## Errors
 
@@ -53,6 +53,7 @@ cloro charges only a request that returns `200` (sync) or reaches `COMPLETED` (a
 | Request | Credits, async | Credits, sync |
 |---|---|---|
 | Results page | 3 | 5 |
+| Each page after the first | +2 | +2 |
 | With `include.aioverview` | 5 | 7 |
 | `include.html` | 0 | 0 |
 
