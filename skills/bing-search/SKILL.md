@@ -1,6 +1,6 @@
 ---
 name: bing-search
-description: 'Use to get live Bing Search results as structured JSON: the organic results and the Bing AI Overview, the AI summary at the top of the Bing results page, for a query in a country. Use it for a Bing SERP API, Bing rankings for a keyword, the sources that the Bing AI summary cites, or to compare Bing and Google results. The fields have the same shapes as Google Search. For Google results, use google-search. For the Bing AI Mode answer to a prompt, use bing-ai-mode. For setup and errors, use cloro-api.'
+description: 'Use to get live Bing Search results as structured JSON: the organic results, the ads and the Bing AI Overview, the AI summary at the top of the Bing results page, for a query in a country. Use it for a Bing SERP API, Bing rankings for a keyword, the sources that the Bing AI summary cites, or to compare Bing and Google results. The fields have the same shapes as Google Search. For Google results, use google-search. For the Bing AI Mode answer to a prompt, use bing-ai-mode. For setup and errors, use cloro-api.'
 license: MIT
 metadata:
   author: cloro
