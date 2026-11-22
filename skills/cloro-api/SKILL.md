@@ -64,7 +64,7 @@ Each request costs credits. cloro charges only for results: a sync request that 
 | Bing AI Mode | 4 | 6 |
 | Google Search, page 1 | 3 | 5 |
 | Google Search with AI Overview | 5 | 7 |
-| Bing Search | 3 | 5 |
+| Bing Search, page 1 | 3 | 5 |
 | Bing Search with AI Overview | 5 | 7 |
 | Google News, page 1 | 3 | 5 |
 
