@@ -1,10 +1,10 @@
 ---
 name: ai-seo-audit
-description: 'Use to audit a brand for AI SEO, also called generative engine optimization (GEO) or answer engine optimization (AEO): "why does ChatGPT not recommend us", "how do we show up in AI answers", "which pages do AI engines cite for our category", "what do we change to get cited", an AI search competitor analysis, or an LLM SEO audit. It runs the buyer prompts in ChatGPT, Gemini, Google AI Mode, Bing AI Mode and the Google AI Overview, finds the prompts where rivals are named and the brand is not, finds the pages that the engines cite, and gives a list of actions. For metrics over time, use ai-visibility-tracking. For one Google results page, use serp-analysis. For setup and errors, use cloro-api.'
+description: 'Use to audit a brand for AI SEO, also called generative engine optimization (GEO) or answer engine optimization (AEO): "why does ChatGPT not recommend us", "how do we show up in AI answers", "which pages do AI engines cite for our category", "what do we change to get cited", an AI search competitor analysis, or an LLM SEO audit. It runs the buyer prompts in ChatGPT, Gemini, Google AI Mode, Bing AI Mode and the Google AI Overview, finds the prompts where rivals are named and the brand is not, finds the pages that the engines cite, compares the brand page with them, and gives a list of actions. For metrics over time, use ai-visibility-tracking. For one Google results page, use serp-analysis. For setup and errors, use cloro-api.'
 license: MIT
 metadata:
   author: cloro
-  version: "0.1.0"
+  version: "0.2.0"
   docs: "https://cloro.dev/docs"
 ---
 
@@ -77,7 +77,28 @@ Look at these four things, in this order:
 
 ChatGPT `include.searchQueries` (+2 credits) asks for the web searches that ChatGPT ran. The field is often empty, also with `legacy: true`. Do not make the audit depend on it.
 
-## Step 5: write the actions
+## Step 5: compare the brand's page with the cited pages
+
+Do this step for each gap where a brand page exists. Do not score the brand's page against fixed targets. Compare it with the pages that the engines cite for the same prompt.
+
+1. Get the text of the brand's page and of the 3 to 5 cited pages that are cited on the most engines for the prompt. Use your web fetch tool.
+2. Find the passage that the engine used. `sources[].description` is the text that the engine shows for a source. On ChatGPT it is often an excerpt from the page. Search the cited page for that text.
+3. Record these items for each page:
+
+| Item | How to read it |
+|---|---|
+| Answer position | The words of the prompt that are in the title and the first 150 words, or in one heading and the 150 words under it. List the prompt words that are missing |
+| Heading | The heading above the answer: a question or a topic label, and if it uses the words of the prompt |
+| Facts | Prices, numbers with units, and named products or brands in the answer passage |
+| Rivals | The brands that the page names. A cited list page names many brands. A brand page often names only the brand |
+| Format | A table, a numbered list or prose. For a table, record if it is HTML text or an image |
+| Date | The date that the page shows, and its `dateModified` in the JSON-LD. On ChatGPT, compare with `sources[].datePublished`. A year in the title that is in the past |
+
+4. Write the differences. For example: "The 4 cited pages give a price in the first paragraph. The brand's page gives no price."
+
+This is a comparison, not a rule. cloro returns what the engines cite. It does not show why an engine picked a page. Say so in the report.
+
+## Step 6: write the actions
 
 Give each action a prompt, an engine and a reason from the data. Use these types:
 
@@ -85,19 +106,20 @@ Give each action a prompt, an engine and a reason from the data. Use these types
 |---|---|
 | A cited list or review page names rivals and not the brand | Ask the publisher to add the brand, or get reviews on that site |
 | No brand page answers the prompt | Write a page that answers the prompt in its first paragraph |
-| A brand page exists but is not cited | Compare it with the cited pages: the answer, the facts, the date, the structure |
+| A brand page exists but is not cited | Change the items where step 5 found a difference, the answer position first |
 | The cited pages rank on Google for the prompt and the brand's pages do not | Improve the brand's page for that query. See `serp-analysis` |
 | An engine says something false about the brand | Find the cited page that says it, and get it fixed |
 
 Put the actions in order: the gaps on the most engines first.
 
-## Step 6: report
+## Step 7: report
 
 1. A summary table: for each engine, the brand's mention rate and citation rate, and the same for each rival.
 2. The gap list, with the rival named and the pages cited.
 3. The top cited domains over all prompts.
-4. The actions, in order.
-5. What the audit covers: engines, country, prompts, runs and dates.
+4. For each gap with a brand page, the step 5 table: the brand's page beside the cited pages.
+5. The actions, in order.
+6. What the audit covers: engines, country, prompts, runs and dates.
 
 To measure the effect of the actions, run the same prompts again later. For a scheduled tracker, use `ai-visibility-tracking`.
 
@@ -110,6 +132,7 @@ Per prompt and run, async: ChatGPT 5, Gemini 4, AI Mode 4, Bing AI Mode 4, AI Ov
 - Do not report one run of one prompt as the brand's position.
 - Do not promise that an action will get the brand cited. Say what the data shows, then measure again.
 - Do not invent ranking factors for AI engines. Use only what the answers and their sources show.
+- Do not give the page a score from fixed targets, for example a word count or a share of named entities. Compare it with the pages that are cited for the same prompt.
 - Do not count a source on a rival's domain as a mention of the brand.
 - Do not claim Grok, Perplexity, Copilot, Claude, DeepSeek or Meta AI results. cloro does not return them.
 

@@ -1,7 +1,7 @@
 {
   "name": "cloro",
   "displayName": "cloro",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Live search and AI answer data for agents: Google Search, Google News, AI Overview and Bing Search results, and ChatGPT, Gemini, Google AI Mode and Bing AI Mode answers as structured JSON. 16 skills and the cloro MCP server.",
   "author": {
     "name": "cloro",
