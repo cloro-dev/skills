@@ -20,7 +20,7 @@ This is not Bing AI Mode. Bing AI Mode (`bing-ai-mode`) returns the AI answer pa
 
 ```bash
 curl -X POST "https://api.cloro.dev/v1/monitor/bing" \
-  -H "Authorization: Bearer $CLORO_API_KEY" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"query": "best crm for startups", "country": "US", "include": {"aioverview": true}}'
 ```

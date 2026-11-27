@@ -16,7 +16,7 @@ Read the live Google results page for a keyword, and say what it takes to rank t
 
 ```bash
 curl -X POST "https://api.cloro.dev/v1/monitor/google" \
-  -H "Authorization: Bearer $CLORO_API_KEY" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"query": "best crm for startups", "country": "US", "include": {"aioverview": true}}'
 ```

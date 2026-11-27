@@ -16,7 +16,7 @@ The AI Overview comes from `POST https://api.cloro.dev/v1/monitor/google` with `
 
 ```bash
 curl -X POST "https://api.cloro.dev/v1/monitor/google" \
-  -H "Authorization: Bearer $CLORO_API_KEY" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "best laptops for programming",

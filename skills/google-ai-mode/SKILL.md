@@ -16,7 +16,7 @@ metadata:
 
 ```bash
 curl -X POST "https://api.cloro.dev/v1/monitor/aimode" \
-  -H "Authorization: Bearer $CLORO_API_KEY" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"prompt": "best project management tool for small teams", "country": "US"}'
 ```

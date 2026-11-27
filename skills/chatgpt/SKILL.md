@@ -18,7 +18,7 @@ cloro sends the prompt to the ChatGPT web interface in a logged-out session in t
 
 ```bash
 curl -X POST "https://api.cloro.dev/v1/monitor/chatgpt" \
-  -H "Authorization: Bearer $CLORO_API_KEY" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": "best running shoes for flat feet",

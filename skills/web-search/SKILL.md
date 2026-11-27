@@ -29,7 +29,7 @@ Start with grounding. Each question costs one search and waits for one search. W
 
 ```bash
 curl -X POST "https://api.cloro.dev/v1/monitor/google" \
-  -H "Authorization: Bearer $CLORO_API_KEY" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"query": "when does the EU AI Act apply to general-purpose AI models", "country": "US", "include": {"aioverview": {"markdown": true}}}'
 ```
@@ -52,7 +52,7 @@ Each key appears only when Google shows the feature. Read every key with a defau
 ```python
 from cloro import Cloro
 
-cloro = Cloro(timeout=300.0)  # reads CLORO_API_KEY
+cloro = Cloro(api_key="YOUR_API_KEY", timeout=300.0)
 
 
 def web_context(question: str, country: str = "US", top_n: int = 10) -> str:

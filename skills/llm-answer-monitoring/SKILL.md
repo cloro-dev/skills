@@ -36,7 +36,7 @@ Collect answers for many prompts from many AI engines, and store them. cloro run
 
 ```bash
 curl -X POST "https://api.cloro.dev/v1/async/task/batch" \
-  -H "Authorization: Bearer $CLORO_API_KEY" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '[
     {"taskType": "CHATGPT", "idempotencyKey": "run-2026-11-03-p1-chatgpt-us",
