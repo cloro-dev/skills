@@ -18,7 +18,7 @@ cloro sends the prompt to the Gemini web interface in a logged-out session in th
 
 ```bash
 curl -X POST "https://api.cloro.dev/v1/monitor/gemini" \
-  -H "Authorization: Bearer $CLORO_API_KEY" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"prompt": "best email marketing platform for ecommerce", "country": "US"}'
 ```

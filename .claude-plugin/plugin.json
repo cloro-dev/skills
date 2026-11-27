@@ -1,7 +1,7 @@
 {
   "name": "cloro",
   "displayName": "cloro",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Live search and AI answer data for agents: Google Search, Google News, AI Overview and Bing Search results, and ChatGPT, Gemini, Google AI Mode and Bing AI Mode answers as structured JSON. 16 skills and the cloro MCP server.",
   "author": {
     "name": "cloro",
@@ -24,5 +24,14 @@
     "geo",
     "deep-research",
     "mcp"
-  ]
+  ],
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "cloro API key",
+      "description": "Your cloro API key from https://dashboard.cloro.dev. The cloro MCP tools send it to mcp.cloro.dev.",
+      "required": true,
+      "sensitive": true
+    }
+  }
 }

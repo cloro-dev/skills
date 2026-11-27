@@ -28,11 +28,11 @@ AI surfaces take `prompt`. Google Search, Google News and Bing Search take `quer
 
 ## Step 1: authenticate
 
-Send the API key as a Bearer token. Read it from `CLORO_API_KEY`. Never write the key in code or in chat.
+Send the API key as a Bearer token. The cloro plugin for Claude Code asks for the key when you enable it, and the cloro MCP tools send it. In your own code, load the key from a secret store or an environment variable. Never write the key in code or in chat.
 
 ```bash
 curl -X POST "https://api.cloro.dev/v1/monitor/chatgpt" \
-  -H "Authorization: Bearer $CLORO_API_KEY" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"prompt": "best crm for startups", "country": "US"}'
 ```
